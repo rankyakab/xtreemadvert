@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">XtreemAdvert</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_advert_feed">AdvertFeedActivity</string>
+    <string name="naira">\U+20A6</string>
+    
+    <string-array name="android_versions">
+        <item>Cupcake</item>
+        <item>frend fries</item>
+        <item>cookies</item>
+        <item>indomiee</item>
+        <item>Beans</item>
+        <item>Bingo</item>
+        <item>Rice</item>
+        <item>dhdk</item>
+        <item>Roll</item>
+        <item>rollas</item>
+        <item>esam</item>
+        <item>patotoes</item>
+        <item>yam</item>
+    </string-array>
+</resources>

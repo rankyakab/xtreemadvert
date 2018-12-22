@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn="navigation_view">
+<group android:checkableBehavior="single">
+    <item android:title="XtreemAds"
+        >
+        <menu>
+            <item  android:icon="@drawable/ic_dashboard" android:id="@+id/home" android:title="DASHBOARD" ></item>
+            <item android:icon="@drawable/ic_advert" android:id="@+id/adverts" android:title="ADVERTS" ></item>
+        </menu>
+
+    </item>
+
+    <item android:title="Settings">
+        <menu>
+
+            <item android:icon="@drawable/ic_person_add_red_24dp"  android:id="@+id/profile" android:title="PROFILE" ></item>
+            <item android:icon="@drawable/ic_file_upload_black_24dp"  android:id="@+id/upload_Ads" android:title="UPLOAD ADVERT" ></item>
+
+        </menu>
+
+
+    </item>
+    <item android:title="Authenticate">
+        <menu>
+            <item android:icon="@drawable/ic_register" android:id="@+id/register" android:title="SIGNUP" ></item>
+        <item android:icon="@drawable/ic_login" android:id="@+id/login" android:title="LOGIN" ></item>
+        <item android:icon="@drawable/ic_exit_to_app_black_24dp" android:id="@+id/logout" android:title="Logout" ></item>
+        </menu>
+    </item>
+</group>
+
+
+
+</menu>

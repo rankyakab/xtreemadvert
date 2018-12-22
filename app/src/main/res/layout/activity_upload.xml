@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start"
+    android:fitsSystemWindows="true"
+
+    android:outlineAmbientShadowColor="@color/colorTan"
+    android:outlineSpotShadowColor="@color/colorTan"
+    android:id="@+id/uploadActivity"
+    tools:context=".UploadActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:id="@+id/uploadtoolbar"
+                android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/Base.ThemeOverlay.AppCompat.Light"
+                android:elevation="4dp"
+                />
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:id="@+id/productImage"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productImage"
+                android:hint="Enter the product name"
+                android:layout_marginTop="20dp"
+                android:id="@+id/productName"
+                android:visibility="gone"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productName"
+                android:hint="Enter discription for the product"
+                android:layout_marginTop="20dp"
+                android:id="@+id/productDesc"
+                android:visibility="gone"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productDesc"
+                android:hint="Enter the price for this Item"
+                android:layout_marginTop="20dp"
+                android:id="@+id/productPrice"
+                android:visibility="gone"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productPrice"
+                android:id="@+id/chooseImageButton"
+                android:layout_marginTop="15dp"
+                android:text="Choose Image"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/chooseImageButton"
+                android:id="@+id/uploadImageButton"
+                android:text="Upload Image"/>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/homeview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:itemTextColor="@color/colorTan"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu_view"
+        android:layout_gravity="start"
+
+        >
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
