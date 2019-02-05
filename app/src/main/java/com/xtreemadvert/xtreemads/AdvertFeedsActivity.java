@@ -54,7 +54,7 @@ public class AdvertFeedsActivity extends AppCompatActivity implements Navigation
         all_advert_post_list.setLayoutManager(linearLayoutManager); //8 set the layout manager created from 6 to the recyclerview(all_advert_post_list)
 
         advertListItems = new ArrayList<>(); //9 instantiatethe advertlistitem object list
-        loadRecyclerViewData(); //10 call the loadrecyclerviewdata function that recycles the recycle view
+       loadRecyclerViewData(); //10 call the loadrecyclerviewdata function that recycles the recycle view
 
 
         //navigation for drawer
@@ -73,6 +73,8 @@ public class AdvertFeedsActivity extends AppCompatActivity implements Navigation
         navigationView.setNavigationItemSelectedListener(this);
 
     }
+
+
 
     //this is for the loadrecyler (10)
     private void loadRecyclerViewData() {
@@ -104,7 +106,12 @@ public class AdvertFeedsActivity extends AppCompatActivity implements Navigation
                                         o.getInt("status"),
                                         o.getString("businessname"),
                                         o.getString("address"),
-                                        o.getString("phonenumber")
+                                        o.getString("phonenumber"),
+                                       o.getString("comment"),
+                                      o.getString("comment_name"),
+                                      o.getString("comment_dating")
+                                      //o.getString("comment_name")
+                                       // o.getInt("comment_id")
 
 
 

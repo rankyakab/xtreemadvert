@@ -38,6 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
     private List<AdvertListItem> advertListItems; // 3 this is expecting a list items of  object type advertlistitem
     //declasre layout manager
     private RecyclerView.LayoutManager layoutManager;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
-        final ProgressDialog progressDialog = new ProgressDialog(this);//1 this is for the loading indicator to start up
+       progressDialog = new ProgressDialog(this);//1 this is for the loading indicator to start up
         progressDialog.setMessage("loading data");// this is the message while loading
         progressDialog.show(); // and this shows it up
         // 2 Instantiate a new StringRequest Object
@@ -171,9 +172,9 @@ public class ProfileActivity extends AppCompatActivity {
     private void loadRecyclerViewMyData() {
         final Integer MEM =  SharedPreferrenceManager.getInstance(this).getUserId();
         final String IDPS = String.valueOf(SharedPreferrenceManager.getInstance(this).getUserId());
-        final ProgressDialog progressDialog = new ProgressDialog(this);//1 this is for the loading indicator to start up
-        progressDialog.setMessage("loading data");// this is the message while loading
-        progressDialog.show(); // and this shows it up
+       // final ProgressDialog progressDialog = new ProgressDialog(this);//1 this is for the loading indicator to start up
+       // progressDialog.setMessage("loading data");// this is the message while loading
+      //  progressDialog.show(); // and this shows it up
         // 2 Instantiate a new StringRequest Object
         //from volley
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Constant.URL_MY_DATA+"?ids="+IDPS,
@@ -199,7 +200,13 @@ public class ProfileActivity extends AppCompatActivity {
                                         o.getInt("status"),
                                         o.getString("businessname"),
                                         o.getString("address"),
-                                        o.getString("phonenumber")
+                                        o.getString("phonenumber"),
+                                        o.getString("comment"),
+                                       o.getString("comment_name"),
+                                        o.getString("comment_dating")
+
+
+
 
 
 
@@ -212,7 +219,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                             //set the created adapter to the recycler view
                            recyclerView.setAdapter(adapter);
-                            Toast.makeText(getApplicationContext(),"mmm" ,Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(getApplicationContext(),"mmm" ,Toast.LENGTH_SHORT).show();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -242,8 +249,8 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     //for deleting item
-    public static void delete_product(int mem_id){
-
+    public  void delete_product(int mem_id){
+        Toast.makeText(this, "esydd",Toast.LENGTH_SHORT).show();
 
     }
 

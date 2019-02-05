@@ -61,8 +61,9 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                                         jsonResponse.getString("username"),
                                         jsonResponse.getString("email")
                                 );
+
                                 startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                                finish();
+                               finish();
                             }else {
                                 Toast.makeText(
                                         getApplicationContext(),

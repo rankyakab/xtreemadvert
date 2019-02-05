@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="1dp"
+    >
+    <LinearLayout
+        android:id="@+id/linearlayout_comment_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp">
+        <LinearLayout
+            android:id="@+id/linearlayoutdebulg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/commenter_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:text="Rankyakab "/>
+            <TextView
+
+
+
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="comment details"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:textSize="14sp"
+                android:id="@+id/all_comment"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+

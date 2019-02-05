@@ -2,6 +2,7 @@ package com.xtreemadvert.xtreemads;
 
 import android.app.LauncherActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -25,7 +26,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
     private List<AdvertListItem> advertListItems;
     private Context context;
-
+    Intent redirecter;
     public MyRecyclerAdapter(List<AdvertListItem> advertListItem, Context context) {
         this.advertListItems = advertListItem;
         this.context = context;
@@ -49,12 +50,26 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         viewHolder.product_price.setText((CharSequence) advertListItemin.getPrice());
         viewHolder.businessname.setText((CharSequence)advertListItemin.getBusinessname());
         viewHolder.address.setText((CharSequence)advertListItemin.getAddress());
-        viewHolder.phonenumber.setText((CharSequence)advertListItemin.getPhonenumber());
+        viewHolder.phonenumber.setText((CharSequence)"Phone Number: "+advertListItemin.getPhonenumber());
+       viewHolder.pro_comment.setText((CharSequence)advertListItemin.getComment());
+    viewHolder.commenter.setText((CharSequence) advertListItemin.getComment_name());
+      viewHolder.comment_dating.setText((CharSequence)advertListItemin.getComment_dating());
+
        // Picasso.with(context).load(advertListItemin.getFile_name()).into(viewHolder.post_image);
-        Glide.with(context).load(advertListItemin.getFile_name()).into(viewHolder.product_image);
-        viewHolder.linearlayout.setOnClickListener(new View.OnClickListener() {
+       Glide.with(context).load(advertListItemin.getFile_name()).into(viewHolder.product_image);
+        viewHolder.comment_logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                redirecter = new Intent(context.getApplicationContext(), DebulgActivity.class);
+                redirecter.putExtra("business_name",advertListItemin.getBusinessname());
+                redirecter.putExtra("business_address",advertListItemin.getAddress());
+                redirecter.putExtra("business_number",advertListItemin.getPhonenumber());
+                redirecter.putExtra("business_image",advertListItemin.getFile_name());
+                redirecter.putExtra("product_name",advertListItemin.getItem_name());
+                redirecter.putExtra("product_description", advertListItemin.getDetails());
+                redirecter.putExtra("product_price", advertListItemin.getPrice());
+                redirecter.putExtra("prodId",Integer.toString(advertListItemin.getId()));
+                context.startActivity(redirecter);
                 Toast.makeText(context.getApplicationContext(), (CharSequence)advertListItemin.getAddress(),Toast.LENGTH_SHORT).show();
             }
         });
@@ -71,10 +86,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         public LinearLayout linearlayout;
         public CircleImageView  post_profile_image;
         public ImageView product_image;
-        public TextView product_name,product_description,product_price,businessname,address,phonenumber;
+        public TextView commenter,product_name,comment_logo,product_description,product_price,businessname,address,phonenumber,pro_comment,comment_dating;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            comment_logo = itemView.findViewById(R.id.comment);
             product_name = (TextView)itemView.findViewById(R.id.product_name);
             product_description =(TextView)itemView.findViewById(R.id.product_description);
             product_price = (TextView)itemView.findViewById(R.id.product_price);
@@ -82,7 +97,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
             businessname = (TextView)itemView.findViewById(R.id.businessname);
             phonenumber=(TextView)itemView.findViewById(R.id.phonenumber);
             address = (TextView)itemView.findViewById(R.id.address);
+           comment_dating = (TextView)itemView.findViewById(R.id.comment_dating);
             linearlayout = (LinearLayout)itemView.findViewById(R.id.linearlayout);
+           pro_comment = (TextView)itemView.findViewById(R.id.pro_comment);
+           commenter = (TextView)itemView.findViewById(R.id.commenter);
+
 
 
 

@@ -83,7 +83,7 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
                     selectImage();
             break;
             case R.id.uploadImageButton:
-                Toast.makeText(getApplicationContext(), "execute function k", Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getApplicationContext(), "execute function k", Toast.LENGTH_LONG).show();
                     uploadImage();
             break;
         }

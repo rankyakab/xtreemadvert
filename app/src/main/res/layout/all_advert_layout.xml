@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/rounded_corner"
+    android:layout_marginBottom="10dp">
 
-        <LinearLayout
+    <LinearLayout
             android:id="@+id/linearlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp">
@@ -77,23 +83,45 @@
             <ImageView
                 android:id="@+id/product_image"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="300dp"
                 android:layout_margin="3dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/productNameAndProductPrice"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="1dp">
+                    <TextView
+                        android:id="@+id/product_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_alignParentLeft="true"
+                        android:text="product_name"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
 
-            <TextView
-                android:id="@+id/product_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="product_name"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="8dp"
-                android:textAlignment="textStart"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="start"
-                android:textColor="@color/colorBlack"/>
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"/>
+                    <TextView
+                        android:id="@+id/product_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="post price"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="italic"
+                        android:layout_alignParentRight="true"
+
+                        android:singleLine="true"
+                        />
+                </RelativeLayout>
+
 
 
             <TextView
@@ -108,18 +136,111 @@
                 android:textColor="@color/colorBlack"
                 android:textStyle="italic"
                 />
-            <TextView
-                android:id="@+id/product_price"
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/commment_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="1dp">
+
+            <RelativeLayout
+                android:id="@+id/comment_image_sec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="post price"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:padding="3dp"
-                android:textSize="14sp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp">
+
+                <TextView
+                    android:id="@+id/comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_alignParentLeft="true"
+                    android:drawableLeft="@drawable/ic_mode_comment_red_24dp"
+                    android:singleLine="true"
+                    android:text="Comment"/>
+                <TextView
+                    android:id="@+id/like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:drawableLeft="@drawable/ic_like_red_24dp"
+                    android:singleLine="true"
+                    android:text="Like"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorGrey"
+            android:layout_margin="5dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/commenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack"
-                android:textStyle="italic"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:text=" "/>
+            <TextView
+                android:id="@+id/pro_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="comment"
+                android:layout_alignParentRight="true"
+
+
+                android:padding="5dp"
+                android:textSize="14sp"
+
+
                 />
+
+
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/comment_date_sec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="1dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignParentRight="true"
+            android:text="date here"
+            android:id="@+id/comment_dating"
+
+            android:singleLine="true"
+
+           />
+        </RelativeLayout>
+
 
 
 
@@ -128,9 +249,6 @@
         </LinearLayout>
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorBlack"
-        android:layout_margin="2dp"/>
+
+
 </RelativeLayout>

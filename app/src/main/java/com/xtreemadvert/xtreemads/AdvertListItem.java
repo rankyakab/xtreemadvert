@@ -7,10 +7,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AdvertListItem {
 
-    private String cat,item_name,details,price,other_info,file_name,owner,phonenumber,businessname,address;
-    private int id,status;
+    private String cat,item_name,details,price,other_info,file_name,owner,phonenumber,businessname,address,comment_name,comment,comment_dating;
+    private int id, status,comment_id;
 
-    public AdvertListItem(String cat, String item_name, String details, String price, String other_info, String file_name, String owner, int id, int status, String businessname, String address, String phonenumber) {
+    public AdvertListItem(String cat, String item_name, String details, String price, String other_info, String file_name, String owner, int id, int status, String businessname, String address, String phonenumber,String comment, String commentName, String comment_dating/*,String comment,String comment_name, int comment_id*/) {
         this.cat = cat;
         this.item_name = item_name;
         this.details = details;
@@ -23,6 +23,22 @@ public class AdvertListItem {
         this.address =address;
         this.id = id;
         this.status = status;
+       this.comment = comment;
+       this.comment_name = commentName;
+      this.comment_dating = comment_dating;
+
+       // this.comment_id = comment_id;
+       // this.comment_name = comment_name;
+
+    }
+    public int getComment_id(){
+        return comment_id;
+    }
+    public String getComment(){
+        return comment;
+    }
+    public String getComment_name(){
+        return comment_name;
     }
 
     public String getCat() {
@@ -72,4 +88,10 @@ public class AdvertListItem {
     public int getStatus() {
         return status;
     }
+    public String getComment_dating(){
+        return comment_dating;
+    }
+
+
+
 }

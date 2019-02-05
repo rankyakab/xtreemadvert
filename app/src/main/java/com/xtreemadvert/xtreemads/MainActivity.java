@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.upload_Ads:
-                if(SharedPreferrenceManager.getInstance(this).isLoggedIn()){
+                if( SharedPreferrenceManager.getInstance(this).isLoggedIn()){
                     startActivity(new Intent (this,UploadActivity.class));
                     break;
 
@@ -130,7 +130,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 i = new Intent(this, SigninActivity.class);
                 startActivity(i);
                 break;
+            case R.id.logout:
 
+                SharedPreferrenceManager.getInstance(this).logout();
+                i = new Intent(this, SigninActivity.class);
+                startActivity(i);
+                break;
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
 
